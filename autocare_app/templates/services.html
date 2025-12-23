@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+{% block title %}Service & Maintenance - AutoCare Services{% endblock %}
+
+{% block content %}
+<!-- Fixed Home Button -->
+<a href="{% url 'home' %}" class="fixed-home-button">
+    <i class="bi bi-house-fill"></i>
+    <span>Home</span>
+</a>
+
+<!-- Service Categories -->
+<section class="service-categories-section">
+    <div class="container">
+        <div class="section-header-center">
+            <h2 class="section-main-title">OUR SERVICES</h2>
+            <p class="section-subtitle">Comprehensive automotive solutions for every need</p>
+        </div>
+
+        <!-- Pre-Delivery Inspection - Special Highlighted Section -->
+        <div class="special-service-banner mb-5">
+            <div class="row align-items-center">
+                <div class="col-lg-3">
+                    <div class="banner-header">
+                        <div class="banner-icon">
+                            <i class="bi bi-clipboard-check-fill"></i>
+                        </div>
+                        <h3 class="banner-title">Pre-Delivery Inspection</h3>
+                        <p class="banner-subtitle">Comprehensive Vehicle Check</p>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="inspection-items-grid">
+                        <div class="inspection-item">
+                            <i class="bi bi-check2-circle"></i>
+                            <span>Exterior body & paint check</span>
+                        </div>
+                        <div class="inspection-item">
+                            <i class="bi bi-check2-circle"></i>
+                            <span>Tyres, wheels & spare tyre check</span>
+                        </div>
+                        <div class="inspection-item">
+                            <i class="bi bi-check2-circle"></i>
+                            <span>Interior fit, seats & dashboard inspection</span>
+                        </div>
+                        <div class="inspection-item">
+                            <i class="bi bi-check2-circle"></i>
+                            <span>Lights, indicators & wipers test</span>
+                        </div>
+                        <div class="inspection-item">
+                            <i class="bi bi-check2-circle"></i>
+                            <span>Engine oil, coolant & brake fluid levels</span>
+                        </div>
+                        <div class="inspection-item">
+                            <i class="bi bi-check2-circle"></i>
+                            <span>Battery health check</span>
+                        </div>
+                        <div class="inspection-item">
+                            <i class="bi bi-check2-circle"></i>
+                            <span>AC & infotainment system test</span>
+                        </div>
+                        <div class="inspection-item">
+                            <i class="bi bi-check2-circle"></i>
+                            <span>Power windows & central locking check</span>
+                        </div>
+                        <div class="inspection-item">
+                            <i class="bi bi-check2-circle"></i>
+                            <span>ECU / diagnostic scan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- 1. Basic Maintenance Services -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-category-card">
+                    <div class="service-icon-wrapper">
+                        <i class="bi bi-gear-fill"></i>
+                    </div>
+                    <h3 class="service-category-title"> Basic Maintenance</h3>
+                    <p class="service-category-desc">Essential maintenance to keep your vehicle running smoothly</p>
+                    <ul class="service-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Engine oil change</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Oil filter replacement</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Air filter & cabin filter replacement</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Coolant top-up / replacement</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Brake fluid top-up</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Battery check & replacement</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Wiper blade replacement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2. Mechanical Repairs -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-category-card">
+                    <div class="service-icon-wrapper">
+                        <i class="bi bi-wrench"></i>
+                    </div>
+                    <h3 class="service-category-title"> Mechanical Repairs</h3>
+                    <p class="service-category-desc">Expert mechanical repairs for all vehicle components</p>
+                    <ul class="service-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Engine repair & tuning</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Clutch repair / replacement</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Gearbox repair (manual & automatic)</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Suspension repair (shock absorbers, struts)</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Steering system repair</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Brake repair (pads, discs, drums)</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Timing belt / chain replacement</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. Electrical & Electronics -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-category-card">
+                    <div class="service-icon-wrapper">
+                        <i class="bi bi-lightning-charge"></i>
+                    </div>
+                    <h3 class="service-category-title"> Electrical & Electronics</h3>
+                    <p class="service-category-desc">Advanced electrical and electronic system solutions</p>
+                    <ul class="service-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Battery charging & alternator repair</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Starter motor repair</li>
+                        <li><i class="bi bi-check-circle-fill"></i> ECU diagnostics & fault code scanning</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Sensor replacement</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Power window & central locking repair</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Lighting system repair (headlights, indicators)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4. AC & Climate Control -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-category-card">
+                    <div class="service-icon-wrapper">
+                        <i class="bi bi-wind"></i>
+                    </div>
+                    <h3 class="service-category-title"> AC & Climate Control</h3>
+                    <p class="service-category-desc">Professional climate control solutions for your comfort</p>
+                    <ul class="service-list">
+                        <li><i class="bi bi-check-circle-fill"></i> AC gas refill</li>
+                        <li><i class="bi bi-check-circle-fill"></i> AC compressor repair</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Cooling coil cleaning</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Heater repair</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Cabin temperature diagnostics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 5. Tyre & Wheel -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-category-card">
+                    <div class="service-icon-wrapper">
+                        <i class="bi bi-car-front-fill"></i>
+                    </div>
+                    <h3 class="service-category-title"> Tyre & Wheel</h3>
+                    <p class="service-category-desc">Complete tyre and wheel care for safe driving</p>
+                    <ul class="service-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Tyre replacement*</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Wheel alignment</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Wheel balancing</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Tyre rotation</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Puncture repair</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Nitrogen air filling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 6. Inspection & Diagnostics -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-category-card">
+                    <div class="service-icon-wrapper">
+                        <i class="bi bi-clipboard2-check"></i>
+                    </div>
+                    <h3 class="service-category-title"> Inspection & Diagnostics</h3>
+                    <p class="service-category-desc">Comprehensive vehicle diagnostics and inspections</p>
+                    <ul class="service-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Full vehicle health check</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Computerized diagnostics scan</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Emission / pollution check</li>
+                        <li><i class="bi bi-check-circle-fill"></i> CNG Tank and Module Inspection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Your custom service features will go here -->
+        </div>
+    </div>
+</section>
+
+{% endblock %}

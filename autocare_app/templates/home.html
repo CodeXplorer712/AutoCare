@@ -1,0 +1,323 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - AutoCare Services{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="hero-main-title">AUTOCARE SERVICES</h1>
+                <p class="hero-description">
+                    Professional automotive maintenance and repair services to keep your vehicle running smoothly.
+                    Our expert technicians provide quality care with transparent pricing and quick turnaround times.
+                </p>
+                <div class="hero-buttons">
+                    <a href="{% url 'services' %}" class="btn-hero-cta">
+                        BOOK SERVICE <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <button type="button" class="btn-emergency-cta" onclick="openEmergencyModal()">
+                        <i class="bi bi-exclamation-triangle-fill"></i> EMERGENCY
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll down indicator -->
+    <div class="scroll-indicator">
+        <i class="bi bi-chevron-down"></i>
+    </div>
+</section>
+
+<!-- Emergency Modal Popup -->
+<div id="emergencyModal" class="emergency-modal">
+    <div class="emergency-modal-content">
+        <span class="emergency-modal-close" onclick="closeEmergencyModal()">&times;</span>
+        <div class="emergency-modal-body">
+            <h2><i class="bi bi-exclamation-triangle-fill"></i> Emergency Service Request</h2>
+            <p class="emergency-subtitle">Fill in the details below and we'll dispatch help immediately</p>
+
+            <form id="emergencyForm" class="emergency-form">
+                <!-- Contact Number -->
+                <div class="form-group">
+                    <label for="contactNumber"><i class="bi bi-telephone-fill"></i> Contact Number *</label>
+                    <input type="tel" id="contactNumber" name="contactNumber" class="form-control"
+                        placeholder="Enter your phone number" required>
+                </div>
+
+                <!-- Car Number -->
+                <div class="form-group">
+                    <label for="carNumber"><i class="bi bi-car-front-fill"></i> Car Number *</label>
+                    <input type="text" id="carNumber" name="carNumber" class="form-control"
+                        placeholder="e.g., MH 01 AB 1234" required>
+                </div>
+
+                <!-- Location -->
+                <div class="form-group">
+                    <label for="location"><i class="bi bi-geo-alt-fill"></i> Location *</label>
+                    <input type="text" id="location" name="location" class="form-control"
+                        placeholder="Enter your current location" required>
+                </div>
+
+
+                <!-- Available Services Info -->
+                <div class="emergency-services-info">
+                    <h3><i class="bi bi-wrench"></i> Available Emergency Services</h3>
+                    <ul class="services-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Breakdown assistance</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Towing service</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Jump-start service</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Flat tyre assistance</li>
+                        <li><i class="bi bi-check-circle-fill"></i> On-road minor repairs</li>
+                    </ul>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-emergency-submit">
+                    <i class="bi bi-send-fill"></i> REQUEST EMERGENCY HELP
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Promotional Cards Section -->
+<section class="promo-cards">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="promo-card">
+                    <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&h=600&fit=crop"
+                        alt="Service and Maintenance" class="promo-card-img">
+                    <div class="promo-card-overlay">
+                        <h3 class="promo-card-title">SERVICE &<br>MAINTENANCE</h3>
+                        <p class="promo-card-subtitle">Professional Care</p>
+                        <a href="{% url 'services' %}" class="btn btn-warning">BOOK NOW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="promo-card">
+                    <img src="https://img.freepik.com/free-photo/professional-washer-blue-uniform-washing-luxury-car-with-water-gun-open-air-car-wash_496169-333.jpg?semt=ais_hybrid&w=740&q=80"
+                        alt="Car Wash" class="promo-card-img">
+                    <div class="promo-card-overlay">
+                        <h3 class="promo-card-title">CAR WASH</h3>
+                        <p class="promo-card-subtitle">Sparkling Clean</p>
+                        <a href="{% url 'services' %}" class="btn btn-warning">BOOK NOW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="promo-card">
+                    <img src="https://permagardindia.com/wp-content/uploads/2021/06/car-care-kit-diy-scaled.jpeg"
+                        alt="Products" class="promo-card-img">
+                    <div class="promo-card-overlay">
+                        <h3 class="promo-card-title">PRODUCTS</h3>
+                        <p class="promo-card-subtitle">Quality Auto Parts</p>
+                        <a href="{% url 'products' %}" class="btn btn-warning">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Featured Services Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Why Choose Us ?</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <div class="card-body">
+                        <i class="bi bi-shield-check text-warning fs-1 mb-3"></i>
+                        <h5 class="card-title">Certified Professionals</h5>
+                        <p class="card-text">Expert mechanics with years of experience in automotive care and
+                            maintenance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <div class="card-body">
+                        <i class="bi bi-currency-rupee text-warning fs-1 mb-3"></i>
+                        <h5 class="card-title">Affordable Pricing</h5>
+                        <p class="card-text">Transparent pricing with no hidden charges. Quality service at competitive
+                            rates.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <div class="card-body">
+                        <i class="bi bi-clock-history text-warning fs-1 mb-3"></i>
+                        <h5 class="card-title">Quick Service</h5>
+                        <p class="card-text">Fast and efficient service delivery without compromising on quality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Info Section -->
+<section class="footer-info-section" id="contact-section">
+    <div class="container">
+        <div class="row">
+            <!-- Company Info -->
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">
+                        <i class="bi bi-car-front-fill"></i>
+                        AUTO CARE
+                    </h3>
+                    <p class="footer-description">
+                        Your trusted partner for premium automotive care and maintenance services.
+                        We provide professional solutions for all your vehicle needs.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opening Hours -->
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="footer-hours">
+                    <h4 class="footer-heading">OPENING HOURS</h4>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span class="hours-day">Monday – Friday</span>
+                            <span class="hours-time">09:00 – 18:00</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Saturday</span>
+                            <span class="hours-time">10:00 – 16:00</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Sunday</span>
+                            <span class="hours-time">Closed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-4">
+                <div class="footer-contact">
+                    <h4 class="footer-heading">CONTACT INFO</h4>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <i class="bi bi-telephone-fill contact-icon"></i>
+                            <span>+91 123 456 7890</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-envelope-fill contact-icon"></i>
+                            <span>info@autocare.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-geo-alt-fill contact-icon"></i>
+                            <span>123 Service Street, Auto City, IN 560001</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Car silhouette decoration -->
+    <div class="footer-car-silhouette"></div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Handle scroll effect for navbar visibility
+    window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.navbar');
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        const scrollPosition = window.scrollY;
+
+        // Show entire navbar when scrolled down 100px
+        if (scrollPosition > 100) {
+            navbar.classList.add('show');
+            if (scrollIndicator) {
+                scrollIndicator.style.opacity = '0';
+            }
+        } else {
+            navbar.classList.remove('show');
+            if (scrollIndicator) {
+                scrollIndicator.style.opacity = '1';
+            }
+        }
+    });
+
+    // Smooth scroll when clicking the down arrow
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', function () {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Emergency Modal Functions
+    function openEmergencyModal() {
+        const modal = document.getElementById('emergencyModal');
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeEmergencyModal() {
+        const modal = document.getElementById('emergencyModal');
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function (event) {
+        const modal = document.getElementById('emergencyModal');
+        if (event.target === modal) {
+            closeEmergencyModal();
+        }
+    });
+
+    // Close modal with Escape key
+    window.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeEmergencyModal();
+        }
+    });
+
+    // Handle emergency form submission
+    document.getElementById('emergencyForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = {
+            contactNumber: document.getElementById('contactNumber').value,
+            carNumber: document.getElementById('carNumber').value,
+            location: document.getElementById('location').value
+        };
+
+        // For now, just show an alert (you can replace this with actual API call)
+        alert('Emergency request submitted!\n\nContact: ' + formData.contactNumber +
+            '\nCar: ' + formData.carNumber +
+            '\nLocation: ' + formData.location +
+            '\n\nOur team will contact you shortly for emergency assistance!');
+
+        // Reset form and close modal
+        this.reset();
+        closeEmergencyModal();
+    });
+</script>
+{% endblock %}

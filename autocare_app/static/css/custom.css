@@ -1,0 +1,1891 @@
+/* ==================== Custom Styles for AutoCare Services ==================== */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #2d2d2d;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+/* ==================== Navbar Styling ==================== */
+.navbar {
+    background: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.navbar.show {
+    transform: translateY(0);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff !important;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #e0e0e0 !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffc107 !important;
+    transform: translateY(-2px);
+}
+
+.navbar .btn-primary {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #1a1a1a;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar .btn-primary:hover {
+    background-color: #ffcd38;
+    border-color: #ffcd38;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+}
+
+/* ==================== Hero Section ==================== */
+.hero-section {
+    position: relative;
+    min-height: 600px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.pinimg.com/1200x/5e/7d/30/5e7d30fde9657b8dfc56df2613aa0739.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-main-title {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 650px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Hero Buttons Container */
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.btn-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #ffc107;
+    color: #ffffff;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn-hero-cta:hover {
+    background-color: #ffc927;
+    transform: translateX(5px);
+    color: #ffffff;
+}
+
+.btn-hero-cta i {
+    transition: transform 0.3s ease;
+}
+
+.btn-hero-cta:hover i {
+    transform: translateX(5px);
+}
+
+/* Emergency Button */
+.btn-emergency-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-emergency-cta:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
+    color: #ffffff;
+}
+
+.btn-emergency-cta i {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 576px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .btn-hero-cta,
+    .btn-emergency-cta {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Down Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+.scroll-indicator i {
+    font-size: 2.5rem;
+    color: #ffc107;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-8px);
+    }
+}
+
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section .lead {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section .btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #1a1a1a;
+    font-weight: 700;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-section .btn-warning:hover {
+    background-color: #ffcd38;
+    border-color: #ffcd38;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.5);
+}
+
+/* ==================== Auto Maintenance Showcase Section ==================== */
+.auto-maintenance-section {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.auto-maintenance-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+    opacity: 0.3;
+}
+
+.maintenance-content {
+    position: relative;
+    z-index: 2;
+    padding-right: 2rem;
+}
+
+.maintenance-tagline {
+    color: #ffc107;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.maintenance-tagline i {
+    font-size: 1.2rem;
+}
+
+.maintenance-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.maintenance-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.btn-services {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.btn-services:hover {
+    background-color: #c0392b;
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+    color: #ffffff;
+}
+
+.btn-services i {
+    transition: transform 0.3s ease;
+}
+
+.btn-services:hover i {
+    transform: translateX(5px);
+}
+
+/* Maintenance Visual Area */
+.maintenance-visual {
+    position: relative;
+    z-index: 2;
+    height: 450px;
+}
+
+.maintenance-car-img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+    animation: carFloat 3s ease-in-out infinite;
+}
+
+@keyframes carFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Service Icons */
+.service-icon {
+    position: absolute;
+    z-index: 3;
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+.service-icon-1 {
+    top: 20%;
+    left: -5%;
+    animation-delay: 0s;
+}
+
+.service-icon-2 {
+    top: 10%;
+    right: 20%;
+    animation-delay: 0.5s;
+}
+
+.service-icon-3 {
+    top: 30%;
+    right: 5%;
+    animation-delay: 1s;
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.icon-circle i {
+    font-size: 1.8rem;
+    color: #e74c3c;
+}
+
+/* Dashed connectors */
+.service-icon::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    background: repeating-linear-gradient(to right,
+            rgba(255, 193, 7, 0.5) 0px,
+            rgba(255, 193, 7, 0.5) 10px,
+            transparent 10px,
+            transparent 20px);
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+}
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* ==================== Promotional Cards Section ==================== */
+.promo-cards {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.promo-card {
+    position: relative;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.promo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.promo-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.promo-card:hover .promo-card-img {
+    transform: scale(1.1);
+}
+
+.promo-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    z-index: 2;
+}
+
+.promo-card-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.promo-card-subtitle {
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+}
+
+.promo-card .btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #1a1a1a;
+    font-weight: 700;
+    padding: 0.7rem 2rem;
+    border-radius: 5px;
+    width: fit-content;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.promo-card .btn-warning:hover {
+    background-color: #ffcd38;
+    transform: translateX(5px);
+}
+
+/* ==================== What We Offer Section ==================== */
+.what-we-offer {
+    padding: 4rem 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d2d2d;
+}
+
+.section-nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    transform: scale(1.1);
+}
+
+/* ==================== Product Cards ==================== */
+.product-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-img-wrapper {
+    position: relative;
+    background-color: #f8f9fa;
+    padding: 2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.product-img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.1);
+}
+
+.wishlist-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wishlist-icon:hover {
+    background-color: #ffc107;
+    transform: scale(1.15);
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-brand {
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+}
+
+.product-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d2d2d;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.product-rating {
+    display: flex;
+    gap: 0.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.star {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.star.empty {
+    color: #e0e0e0;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d2d2d;
+}
+
+/* ==================== Button Styles ==================== */
+.btn {
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ==================== Footer Styling ==================== */
+footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    margin-top: auto;
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 400px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
+    .promo-card {
+        height: 250px;
+        margin-bottom: 1.5rem;
+    }
+
+    .promo-card-title {
+        font-size: 1.5rem;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .product-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+/* ==================== Footer Info Section ==================== */
+.footer-info-section {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+    padding: 80px 0 40px;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.footer-info-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 193, 7, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.footer-brand,
+.footer-hours,
+.footer-contact {
+    position: relative;
+    z-index: 2;
+}
+
+/* Company Info */
+.footer-logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-logo i {
+    color: #ffc107;
+}
+
+.footer-description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-icon:hover {
+    background-color: #ffc107;
+    color: #1e3a5f;
+    transform: translateY(-5px);
+    border-color: #ffc107;
+}
+
+/* Opening Hours & Contact */
+.footer-heading {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #ffc107;
+}
+
+.hours-list,
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hours-day {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    min-width: 150px;
+}
+
+.hours-time {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.contact-icon {
+    color: #ffc107;
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+/* Car Silhouette Decoration */
+.footer-car-silhouette {
+    position: absolute;
+    bottom: -50px;
+    right: -100px;
+    width: 800px;
+    height: 300px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300"><path d="M100,150 L200,100 L400,100 L500,120 L600,150 L700,150 L750,180 L100,180 Z" fill="rgba(255,255,255,0.03)"/><circle cx="250" cy="200" r="40" fill="rgba(255,255,255,0.05)"/><circle cx="600" cy="200" r="40" fill="rgba(255,255,255,0.05)"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Responsive Footer */
+@media (max-width: 992px) {
+    .footer-info-section {
+        padding: 60px 0 30px;
+    }
+
+    .footer-brand,
+    .footer-hours,
+    .footer-contact {
+        margin-bottom: 2rem;
+    }
+
+    .footer-car-silhouette {
+        width: 600px;
+        height: 200px;
+        right: -50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-logo {
+        font-size: 1.5rem;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .hours-item {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .footer-car-silhouette {
+        display: none;
+    }
+}
+
+/* ==================== SERVICES PAGE STYLING ==================== */
+
+/* Services Hero Section */
+.services-hero-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.services-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,193,7,0.05)"/></svg>') repeat;
+    opacity: 0.4;
+}
+
+.services-hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.services-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 193, 7, 0.15);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    color: #ffc107;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.services-hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.services-hero-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    max-width: 550px;
+}
+
+.services-hero-stats {
+    display: flex;
+    gap: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffc107;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.services-hero-image img {
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.services-hero-image img:hover {
+    transform: scale(1.02);
+}
+
+/* Service Categories Section */
+.service-categories-section {
+    padding: 80px 0;
+    background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+}
+
+.section-header-center {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-main-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Service Category Cards */
+.service-category-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 2.5rem;
+    height: 100%;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ffc107 0%, #ffcd38 100%);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.service-category-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-category-card.featured {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #ffffff;
+    position: relative;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ffc107;
+    color: #1a1a2e;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.service-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ffc107 0%, #ffcd38 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3);
+}
+
+.service-category-card.featured .service-icon-wrapper {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.service-icon-wrapper i {
+    font-size: 2rem;
+    color: #1a1a2e;
+}
+
+.service-category-card.featured .service-icon-wrapper i {
+    color: #ffc107;
+}
+
+.service-category-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1a1a2e;
+}
+
+.service-category-card.featured .service-category-title {
+    color: #ffffff;
+}
+
+.service-category-desc {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-category-card.featured .service-category-desc {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.service-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+.service-category-card.featured .service-list li {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.service-list i {
+    color: #ffc107;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.service-price-range {
+    border-top: 2px solid #f0f0f0;
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-category-card.featured .service-price-range {
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.service-price-range .label {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.service-category-card.featured .service-price-range .label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.service-price-range .price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1a1a2e;
+}
+
+.service-category-card.featured .service-price-range .price {
+    color: #ffc107;
+}
+
+/* Why Choose Services Section */
+.why-choose-services-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.why-choose-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 1.5rem;
+}
+
+.why-choose-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.features-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ffc107 0%, #ffcd38 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+.feature-icon i {
+    font-size: 1.5rem;
+    color: #1a1a2e;
+}
+
+.feature-content h5 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 0.5rem;
+}
+
+.feature-content p {
+    color: #666;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.why-choose-image img {
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Service Booking CTA */
+.service-booking-cta {
+    background: linear-gradient(135deg, #dc3545 0%, #bb2d3b 100%);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-booking-cta::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -5%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.cta-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-cta-primary,
+.btn-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn-cta-primary {
+    background: #ffffff;
+    color: #dc3545;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cta-primary:hover {
+    background: #ffc107;
+    color: #1a1a2e;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-cta-secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn-cta-secondary:hover {
+    background: #ffffff;
+    color: #dc3545;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design for Services Page */
+@media (max-width: 992px) {
+    .services-hero-title {
+        font-size: 3rem;
+    }
+
+    .services-hero-stats {
+        gap: 2rem;
+    }
+
+    .section-main-title {
+        font-size: 2.5rem;
+    }
+
+    .why-choose-title {
+        font-size: 2rem;
+    }
+
+    .cta-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-hero-section {
+        padding: 80px 0 60px;
+    }
+
+    .services-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .services-hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .section-main-title {
+        font-size: 2rem;
+    }
+
+    .service-category-card {
+        padding: 2rem;
+    }
+
+    .cta-title {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-cta-primary,
+    .btn-cta-secondary {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-hero-title {
+        font-size: 2rem;
+    }
+
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+
+    .section-main-title {
+        font-size: 1.75rem;
+    }
+
+    .service-category-title {
+        font-size: 1.25rem;
+    }
+
+    .cta-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* ==================== Special Pre-Delivery Inspection Banner ==================== */
+.special-service-banner {
+    background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(243, 156, 18, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.special-service-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.banner-header {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.banner-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.banner-icon i {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+}
+
+.banner-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.banner-subtitle {
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    margin: 0;
+}
+
+.inspection-items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+}
+
+.inspection-item {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1a1a1a;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.inspection-item i {
+    font-size: 1rem;
+    color: #dc3545;
+    flex-shrink: 0;
+}
+
+/* Responsive Design for Banner */
+@media (max-width: 992px) {
+    .inspection-items-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner-header {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .inspection-items-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-title {
+        font-size: 1rem;
+    }
+
+    .special-service-banner {
+        padding: 1rem;
+    }
+}
+
+/* ==================== Emergency Modal Popup ==================== */
+.emergency-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.emergency-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emergency-modal-content {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+.emergency-modal-close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+    line-height: 1;
+}
+
+.emergency-modal-close:hover {
+    color: #ff0000;
+    transform: scale(1.2);
+}
+
+.emergency-modal-body {
+    padding: 2.5rem;
+}
+
+.emergency-modal-body h2 {
+    color: #ff0000;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    padding-right: 2rem;
+}
+
+.emergency-modal-body h2 i {
+    margin-right: 0.5rem;
+}
+
+.emergency-subtitle {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Emergency Form Styles */
+.emergency-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-group label i {
+    color: #ff0000;
+    font-size: 1.1rem;
+}
+
+.form-control {
+    padding: 0.875rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #ff0000;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+}
+
+.form-control::placeholder {
+    color: #999;
+}
+
+select.form-control {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+/* Emergency Services Info Section */
+.emergency-services-info {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+    border: 2px solid #ffcccc;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.emergency-services-info h3 {
+    color: #ff0000;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.emergency-services-info h3 i {
+    font-size: 1.2rem;
+}
+
+.services-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+.services-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+}
+
+.services-list li i {
+    color: #00c853;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.btn-emergency-submit {
+    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.btn-emergency-submit:hover {
+    background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+}
+
+.btn-emergency-submit:active {
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .emergency-modal-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .emergency-modal-body {
+        padding: 1.5rem;
+    }
+
+    .emergency-modal-body h2 {
+        font-size: 1.5rem;
+    }
+
+    .emergency-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .form-control {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-emergency-submit {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==================== Fixed Home Button ==================== */
+.fixed-home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+    background: linear-gradient(135deg, #ffc107 0%, #ffcd38 100%);
+    color: #1a1a1a;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+    transition: all 0.3s ease;
+}
+
+.fixed-home-button:hover {
+    background: linear-gradient(135deg, #ffcd38 0%, #ffc107 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
+    color: #1a1a1a;
+}
+
+.fixed-home-button i {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .fixed-home-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .fixed-home-button span {
+        display: none;
+    }
+
+    .fixed-home-button {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        justify-content: center;
+    }
+}
