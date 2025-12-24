@@ -1,0 +1,13 @@
+# Ensure shell scripts always have LF line endings
+*.sh text eol=lf
+
+# Python files
+*.py text eol=lf
+
+# HTML, CSS, JS files
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+
+# Markdown files
+*.md text eol=lf
