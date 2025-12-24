@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import SignUpForm, ContactForm
-from .models import Service, Product
+from .forms import SignUpForm
+from .models import CarWashBooking, ServiceBooking
 
 
 # ==================== PUBLIC VIEWS ====================
@@ -73,22 +73,37 @@ def logout_view(request):
     return redirect('home')
 
 
-# Contact View - Display and handle contact form
-def contact_view(request):
+# Car Wash Booking View - Display car wash booking page
+def car_wash_booking_view(request):
     """
-    Display contact form and handle submissions.
-    Form data is saved to the database (no email sending).
+    Display car wash booking page.
+    GET: Display booking form with package options
+    POST: Handle booking form submission and save to database
     """
     if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()  # Save contact message to database
-            messages.success(request, 'Thank you! Your message has been sent successfully.')
-            return redirect('contact')
-    else:
-        form = ContactForm()
+        # Get form data
+        customer_name = request.POST.get('customer_name')
+        phone = request.POST.get('phone')
+        car_number = request.POST.get('car_number')
+        wash_package = request.POST.get('wash_package')
+        booking_date = request.POST.get('booking_date')
+        booking_time = request.POST.get('booking_time')
+        
+        # Create and save booking to database
+        booking = CarWashBooking.objects.create(
+            customer_name=customer_name,
+            phone=phone,
+            car_number=car_number,
+            wash_package=wash_package,
+            booking_date=booking_date,
+            booking_time=booking_time
+        )
+        
+        # Show success message
+        messages.success(request, f'Booking confirmed for {customer_name}! We will contact you shortly.')
+        return redirect('car_wash_booking')
     
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'carwash.html')
 
 
 # ==================== PROTECTED VIEWS (Login Required) ====================
@@ -97,20 +112,33 @@ def contact_view(request):
 @login_required
 def services_view(request):
     """
-    Display all car services.
+    Display all car services and handle service booking submissions.
     Requires user to be logged in.
+    GET: Display services page
+    POST: Handle booking form submission
     """
-    services = Service.objects.all()  # Get all services from database
-    return render(request, 'services.html', {'services': services})
-
-
-# Products View - Display all available products
-@login_required
-def products_view(request):
-    """
-    Display all car-related products.
-    Requires user to be logged in.
-    """
-    products = Product.objects.all()  # Get all products from database
-    return render(request, 'products.html', {'products': products})
+    if request.method == 'POST':
+        # Get form data
+        customer_name = request.POST.get('customer_name')
+        phone = request.POST.get('phone')
+        car_number = request.POST.get('car_number')
+        service_category = request.POST.get('service_category')
+        booking_date = request.POST.get('booking_date')
+        booking_time = request.POST.get('booking_time')
+        
+        # Create and save booking to database
+        booking = ServiceBooking.objects.create(
+            customer_name=customer_name,
+            phone=phone,
+            car_number=car_number,
+            service_category=service_category,
+            booking_date=booking_date,
+            booking_time=booking_time
+        )
+        
+        # Show success message
+        messages.success(request, f'Service booking confirmed for {customer_name}! We will contact you shortly.')
+        return redirect('services')
+    
+    return render(request, 'services.html')
 

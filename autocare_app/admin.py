@@ -1,28 +1,23 @@
 from django.contrib import admin
-from .models import Service, Product, ContactMessage
+from .models import CarWashBooking, ServiceBooking
 
 
-# Service Admin Configuration
-@admin.register(Service)
-class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'created_at')  # Columns to display in admin list
-    search_fields = ('name', 'description')  # Enable search by name and description
-    list_filter = ('created_at',)  # Filter by creation date
+# CarWashBooking Admin Configuration
+@admin.register(CarWashBooking)
+class CarWashBookingAdmin(admin.ModelAdmin):
+    list_display = ('customer_name', 'phone', 'car_number', 'wash_package', 'booking_date', 'booking_time', 'created_at')
+    search_fields = ('customer_name', 'phone', 'car_number')
+    list_filter = ('wash_package', 'booking_date', 'created_at')
+    readonly_fields = ('created_at',)
+    ordering = ('-created_at',)  # Most recent bookings first
 
 
-# Product Admin Configuration
-@admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'created_at')  # Columns to display in admin list
-    search_fields = ('name', 'description')  # Enable search by name and description
-    list_filter = ('created_at',)  # Filter by creation date
-
-
-# ContactMessage Admin Configuration
-@admin.register(ContactMessage)
-class ContactMessageAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'created_at')  # Columns to display in admin list
-    search_fields = ('name', 'email', 'message')  # Enable search
-    list_filter = ('created_at',)  # Filter by creation date
-    readonly_fields = ('created_at',)  # Make timestamp read-only
+# ServiceBooking Admin Configuration
+@admin.register(ServiceBooking)
+class ServiceBookingAdmin(admin.ModelAdmin):
+    list_display = ('customer_name', 'phone', 'car_number', 'service_category', 'booking_date', 'booking_time', 'created_at')
+    search_fields = ('customer_name', 'phone', 'car_number')
+    list_filter = ('service_category', 'booking_date', 'created_at')
+    readonly_fields = ('created_at',)
+    ordering = ('-created_at',)  # Most recent bookings first
 

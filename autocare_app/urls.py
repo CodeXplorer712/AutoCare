@@ -8,9 +8,8 @@ urlpatterns = [
     path('signup/', views.signup_view, name='signup'),  # Sign Up page
     path('signin/', views.signin_view, name='signin'),  # Sign In page
     path('logout/', views.logout_view, name='logout'),  # Logout action
-    path('contact/', views.contact_view, name='contact'),  # Contact page
+    path('car-wash-booking/', views.car_wash_booking_view, name='car_wash_booking'),  # Car Wash Booking
     
     # Protected routes (require authentication)
-    path('services/', views.services_view, name='services'),  # Services listing
-    path('products/', views.products_view, name='products'),  # Products listing
+    path('services/', views.services_view, name='services'),  # Services listing and booking
 ]
