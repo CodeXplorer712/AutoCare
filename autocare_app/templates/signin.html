@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Sign In - AutoCare Services{% endblock %}
+{% block title %}Authentication - AutoCare Services{% endblock %}
 
 {% block content %}
 <section class="py-5">
@@ -9,39 +9,148 @@
             <div class="col-md-6 col-lg-5">
                 <div class="card shadow">
                     <div class="card-body p-5">
-                        <h2 class="text-center mb-4">Sign In</h2>
-                        <p class="text-center text-muted mb-4">Welcome back to AutoCare Services</p>
+                        <!-- Tab Navigation -->
+                        <ul class="nav nav-pills nav-fill mb-4" id="authTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="signin-tab" data-bs-toggle="pill"
+                                    data-bs-target="#signin" type="button" role="tab" aria-controls="signin"
+                                    aria-selected="true">
+                                    <i class="bi bi-box-arrow-in-right"></i> Sign In
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="signup-tab" data-bs-toggle="pill" data-bs-target="#signup"
+                                    type="button" role="tab" aria-controls="signup" aria-selected="false">
+                                    <i class="bi bi-person-plus"></i> Sign Up
+                                </button>
+                            </li>
+                        </ul>
 
-                        <form method="post">
-                            {% csrf_token %}
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="authTabContent">
+                            <!-- Sign In Tab -->
+                            <div class="tab-pane fade show active" id="signin" role="tabpanel"
+                                aria-labelledby="signin-tab">
+                                <h2 class="text-center mb-3">Welcome Back</h2>
+                                <p class="text-center text-muted mb-4">Sign in to your account</p>
 
-                            <!-- Username Field -->
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" name="username"
-                                    placeholder="Enter username" required>
+                                <form method="post" action="{% url 'signin' %}">
+                                    {% csrf_token %}
+
+                                    <!-- Username Field -->
+                                    <div class="mb-3">
+                                        <label for="signin-username" class="form-label">Username</label>
+                                        <input type="text" class="form-control" id="signin-username" name="username"
+                                            placeholder="Enter username" required>
+                                    </div>
+
+                                    <!-- Password Field -->
+                                    <div class="mb-3">
+                                        <label for="signin-password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="signin-password" name="password"
+                                            placeholder="Enter password" required>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <button type="submit" class="btn btn-primary w-100 py-2">
+                                        <i class="bi bi-box-arrow-in-right"></i> Sign In
+                                    </button>
+                                </form>
                             </div>
 
-                            <!-- Password Field -->
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password"
-                                    placeholder="Enter password" required>
+                            <!-- Sign Up Tab -->
+                            <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+                                <h2 class="text-center mb-3">Create Account</h2>
+                                <p class="text-center text-muted mb-4">Join AutoCare Services today</p>
+
+                                <form method="post" action="{% url 'signup' %}">
+                                    {% csrf_token %}
+
+                                    <!-- Display form errors -->
+                                    {% if form.non_field_errors %}
+                                    <div class="alert alert-danger">
+                                        {{ form.non_field_errors }}
+                                    </div>
+                                    {% endif %}
+
+                                    <!-- Username Field -->
+                                    <div class="mb-3">
+                                        <label for="signup-username" class="form-label">Username</label>
+                                        {% if form.username %}
+                                        {{ form.username }}
+                                        {% if form.username.errors %}
+                                        <div class="text-danger small">{{ form.username.errors }}</div>
+                                        {% endif %}
+                                        {% else %}
+                                        <input type="text" class="form-control" id="signup-username" name="username"
+                                            placeholder="Choose a username" required>
+                                        {% endif %}
+                                    </div>
+
+                                    <!-- Email Field -->
+                                    <div class="mb-3">
+                                        <label for="signup-email" class="form-label">Email</label>
+                                        {% if form.email %}
+                                        {{ form.email }}
+                                        {% if form.email.errors %}
+                                        <div class="text-danger small">{{ form.email.errors }}</div>
+                                        {% endif %}
+                                        {% else %}
+                                        <input type="email" class="form-control" id="signup-email" name="email"
+                                            placeholder="Enter your email" required>
+                                        {% endif %}
+                                    </div>
+
+                                    <!-- Password Field -->
+                                    <div class="mb-3">
+                                        <label for="signup-password1" class="form-label">Password</label>
+                                        {% if form.password1 %}
+                                        {{ form.password1 }}
+                                        {% if form.password1.errors %}
+                                        <div class="text-danger small">{{ form.password1.errors }}</div>
+                                        {% endif %}
+                                        {% else %}
+                                        <input type="password" class="form-control" id="signup-password1"
+                                            name="password1" placeholder="Create a password" required>
+                                        {% endif %}
+                                        <div class="form-text">Password must be at least 8 characters.</div>
+                                    </div>
+
+                                    <!-- Confirm Password Field -->
+                                    <div class="mb-3">
+                                        <label for="signup-password2" class="form-label">Confirm Password</label>
+                                        {% if form.password2 %}
+                                        {{ form.password2 }}
+                                        {% if form.password2.errors %}
+                                        <div class="text-danger small">{{ form.password2.errors }}</div>
+                                        {% endif %}
+                                        {% else %}
+                                        <input type="password" class="form-control" id="signup-password2"
+                                            name="password2" placeholder="Confirm your password" required>
+                                        {% endif %}
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <button type="submit" class="btn btn-primary w-100 py-2">
+                                        <i class="bi bi-person-plus"></i> Create Account
+                                    </button>
+                                </form>
                             </div>
-
-                            <!-- Submit Button -->
-                            <button type="submit" class="btn btn-primary w-100 py-2">Sign In</button>
-                        </form>
-
-                        <hr class="my-4">
-
-                        <p class="text-center mb-0">
-                            Don't have an account? <a href="{% url 'signup' %}">Sign Up</a>
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    // Auto-switch to Sign Up tab if there are form errors
+    {% if form.errors %}
+    document.addEventListener('DOMContentLoaded', function () {
+        const signupTab = new bootstrap.Tab(document.getElementById('signup-tab'));
+        signupTab.show();
+    });
+    {% endif %}
+</script>
 {% endblock %}

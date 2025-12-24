@@ -14,20 +14,15 @@
                     Our expert technicians provide quality care with transparent pricing and quick turnaround times.
                 </p>
                 <div class="hero-buttons">
-                    <a href="{% url 'services' %}" class="btn-hero-cta">
+                    <button type="button" class="btn-hero-cta" onclick="scrollToServices()">
                         BOOK SERVICE <i class="bi bi-arrow-right"></i>
-                    </a>
+                    </button>
                     <button type="button" class="btn-emergency-cta" onclick="openEmergencyModal()">
                         <i class="bi bi-exclamation-triangle-fill"></i> EMERGENCY
                     </button>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Scroll down indicator -->
-    <div class="scroll-indicator">
-        <i class="bi bi-chevron-down"></i>
     </div>
 </section>
 
@@ -86,10 +81,10 @@
 
 
 <!-- Promotional Cards Section -->
-<section class="promo-cards">
+<section id="promo-section" class="promo-cards">
     <div class="container">
-        <div class="row g-4">
-            <div class="col-md-4">
+        <div class="row g-5 justify-content-center">
+            <div class="col-md-6">
                 <div class="promo-card">
                     <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&h=600&fit=crop"
                         alt="Service and Maintenance" class="promo-card-img">
@@ -100,7 +95,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="promo-card">
                     <img src="https://img.freepik.com/free-photo/professional-washer-blue-uniform-washing-luxury-car-with-water-gun-open-air-car-wash_496169-333.jpg?semt=ais_hybrid&w=740&q=80"
                         alt="Car Wash" class="promo-card-img">
@@ -108,17 +103,6 @@
                         <h3 class="promo-card-title">CAR WASH</h3>
                         <p class="promo-card-subtitle">Sparkling Clean</p>
                         <a href="{% url 'services' %}" class="btn btn-warning">BOOK NOW</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="promo-card">
-                    <img src="https://permagardindia.com/wp-content/uploads/2021/06/car-care-kit-diy-scaled.jpeg"
-                        alt="Products" class="promo-card-img">
-                    <div class="promo-card-overlay">
-                        <h3 class="promo-card-title">PRODUCTS</h3>
-                        <p class="promo-card-subtitle">Quality Auto Parts</p>
-                        <a href="{% url 'products' %}" class="btn btn-warning">SHOP NOW</a>
                     </div>
                 </div>
             </div>
@@ -240,36 +224,34 @@
 
 {% block extra_js %}
 <script>
+    // Scroll to services section when clicking BOOK SERVICE button
+    function scrollToServices() {
+        const promoSection = document.getElementById('promo-section');
+        const navbar = document.querySelector('.navbar');
+        if (promoSection) {
+            const navbarHeight = navbar ? navbar.offsetHeight : 0;
+            const elementPosition = promoSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+
     // Handle scroll effect for navbar visibility
     window.addEventListener('scroll', function () {
         const navbar = document.querySelector('.navbar');
-        const scrollIndicator = document.querySelector('.scroll-indicator');
         const scrollPosition = window.scrollY;
 
         // Show entire navbar when scrolled down 100px
         if (scrollPosition > 100) {
             navbar.classList.add('show');
-            if (scrollIndicator) {
-                scrollIndicator.style.opacity = '0';
-            }
         } else {
             navbar.classList.remove('show');
-            if (scrollIndicator) {
-                scrollIndicator.style.opacity = '1';
-            }
         }
     });
-
-    // Smooth scroll when clicking the down arrow
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    if (scrollIndicator) {
-        scrollIndicator.addEventListener('click', function () {
-            window.scrollTo({
-                top: window.innerHeight,
-                behavior: 'smooth'
-            });
-        });
-    }
 
     // Emergency Modal Functions
     function openEmergencyModal() {
