@@ -1,0 +1,268 @@
+/* Services Page Styles */
+
+/* Service Category Cards - Enhanced with Price and Button */
+.service-category-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-price {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffc107;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.service-list {
+    flex-grow: 1;
+    margin-bottom: 2rem;
+}
+
+/* Book Now Button - Similar to Book Now Button in Carwash */
+.btn-book-service {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ffc107 0%, #ffcd38 100%);
+    color: #1a1a2e;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+.btn-book-service:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.5);
+}
+
+.btn-book-service i {
+    margin-right: 8px;
+}
+
+/* Pre-Delivery Inspection Banner Styles */
+.banner-price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin: 1rem 0 0.75rem 0;
+}
+
+.btn-book-banner {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    background: #1a1a2e;
+    color: #ffc107;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(26, 26, 46, 0.3);
+}
+
+.btn-book-banner:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(26, 26, 46, 0.5);
+    background: #2a2a3e;
+}
+
+.btn-book-banner i {
+    margin-right: 8px;
+}
+
+/* Booking Modal Styles */
+.booking-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+}
+
+.booking-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.booking-modal-content {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+.booking-modal-close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+    line-height: 1;
+}
+
+.booking-modal-close:hover {
+    color: #ffc107;
+    transform: rotate(90deg);
+}
+
+.booking-modal-body {
+    padding: 2.5rem;
+}
+
+.booking-modal-body h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.booking-subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.selected-service-info {
+    background: linear-gradient(135deg, #ffc107 0%, #ffcd38 100%);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected-service-info strong {
+    color: #1a1a2e;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.selected-service-info .price {
+    color: #1a1a2e;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.form-section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.form-group label i {
+    color: #ffc107;
+    margin-right: 8px;
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    padding: 12px 18px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
+    outline: none;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ffc107 0%, #ffcd38 100%);
+    color: #1a1a2e;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3);
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 193, 7, 0.5);
+}
+
+.btn-submit i {
+    margin-right: 10px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-modal-body {
+        padding: 1.5rem;
+    }
+
+    .booking-modal-body h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .booking-modal-content {
+        width: 95%;
+    }
+}

@@ -34,7 +34,7 @@ def signup_view(request):
     else:
         form = SignUpForm()
     
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'signin.html', {'form': form, 'show_signup': True})
 
 
 # Sign In View - User login
@@ -85,6 +85,7 @@ def car_wash_booking_view(request):
         customer_name = request.POST.get('customer_name')
         phone = request.POST.get('phone')
         car_number = request.POST.get('car_number')
+        address = request.POST.get('address')
         wash_package = request.POST.get('wash_package')
         booking_date = request.POST.get('booking_date')
         booking_time = request.POST.get('booking_time')
@@ -94,6 +95,7 @@ def car_wash_booking_view(request):
             customer_name=customer_name,
             phone=phone,
             car_number=car_number,
+            address=address,
             wash_package=wash_package,
             booking_date=booking_date,
             booking_time=booking_time
@@ -122,6 +124,7 @@ def services_view(request):
         customer_name = request.POST.get('customer_name')
         phone = request.POST.get('phone')
         car_number = request.POST.get('car_number')
+        address = request.POST.get('address')
         service_category = request.POST.get('service_category')
         booking_date = request.POST.get('booking_date')
         booking_time = request.POST.get('booking_time')
@@ -131,6 +134,7 @@ def services_view(request):
             customer_name=customer_name,
             phone=phone,
             car_number=car_number,
+            address=address,
             service_category=service_category,
             booking_date=booking_date,
             booking_time=booking_time
